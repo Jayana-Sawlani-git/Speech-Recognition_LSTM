@@ -1,29 +1,46 @@
+# 🎙️ Listen, Attend and Spell (LAS) - Speech Recognition Using Deep Learning
+This project implements the Listen, Attend and Spell (LAS) architecture — a powerful end-to-end speech recognition model that transforms raw audio into human-readable text using neural networks. It integrates three core components: a Bi-directional LSTM encoder, an attention-based decoder, and an alignment mechanism that enables the model to "listen" to spoken words, "attend" to relevant parts of the input, and "spell" out the corresponding text.
 
-## Listen, Attend and Spell (LAS) Model
+💡 Designed to learn directly from data, LAS does not rely on traditional phoneme modeling or pronunciation dictionaries. Instead, it learns character-level transcription through sequence-to-sequence modeling, powered by attention.
 
-🎧 Listen, Attend and Spell (LAS) — End-to-End Speech Recognition with PyTorch
-Transform raw audio into written text using deep learning! This project brings the power of sequence-to-sequence models with attention mechanisms to speech recognition, following the LAS (Listen, Attend and Spell) architecture.
+## 🚀 Features
+Encoder-Decoder architecture with attention
 
-🚀 Built from scratch with PyTorch, this project teaches your model to "listen" to speech, "attend" to important audio features, and "spell" the corresponding text — all in one elegant pipeline.
+Fully implemented in PyTorch
 
-**🗂️ Dataset**
-We use a curated subset of the popular LibriSpeech dataset — train-clean-5 — perfect for training and testing small to mid-scale speech recognition models.
+Trained on real-world speech data
 
-Format: .flac audio files & their text transcripts
+Character-level transcription output
 
-Source: LibriSpeech ASR corpus (http://www.openslr.org/12)
+End-to-end deep learning pipeline
 
-Preprocessing: Audio → Mel Spectrograms using torchaudio
+## 📁 Dataset
+This project uses a subset of the LibriSpeech dataset: specifically, the train-clean-5 portion, which contains approximately 5 hours of clean speech audio from audiobooks read by multiple speakers.
 
-**🔍 Features**
+Format: FLAC audio + plain text transcription
 
-📦 Custom PyTorch Dataset for LibriSpeech
+Sample Rate: 16 kHz
 
-🎯 Sequence-to-sequence model with attention
+Transcription Type: Character-level
 
-🧠 Bidirectional LSTM Encoder + Attention-based Decoder
+**📦 Dataset link: https://www.openslr.org/12**
 
-⚡ Works with variable-length audio & padded batches
+Make sure to download and extract the dataset into the correct directory before training.
 
-🛠️ Easy to train & extend
+## 🛠️ Technologies Used
+Python 3
 
+PyTorch
+
+torchaudio
+
+LibriSpeech dataset
+
+Jupyter Notebook or Google Colab
+
+## 🧠 How It Works
+The encoder listens: it extracts temporal features from the input audio using Bi-directional LSTMs.
+
+The attention module attends: it learns which part of the input to focus on during decoding.
+
+The decoder spells: it generates the output text sequence character-by-character.
